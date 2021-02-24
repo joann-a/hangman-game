@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="centered-content">
+        <h1>Let's play hangman!</h1>
+        <a href="#main-content" class="down-arrow"><i class="fas fa-arrow-down"></i></a>
+      </div>
+    </section>
+    <section>
+      <div id="main-content" class="main-content">
+          <div class="hangman-word"></div>
+          <h3>Guess a letter in the word</h3>
+          <div class="letters-choose"></div>
+          <h3>Letters guessed incorrectly</h3>
+          <div class="letters-guessed"></div>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>

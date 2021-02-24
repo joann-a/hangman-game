@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Poppins", "sans-serif";
+}
+
+body {
+  background: linear-gradient(#ffeaa3, #ffdde2);
+  height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  scroll-snap-align: center;
+}
+
+.centered-content,
+.main-content {
+  margin: 4rem;
+  height: 90vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fffd82;
+  border-radius: 1rem;
+}
+
+.main-content {
+  display: flex;
+}
+
+h1 {
+  color: #1b998b;
+  font-size: 8rem;
+}
+
+h3 {
+  color: #1b998b;
+  font-size: 2rem;
+}
+
+.down-arrow {
+  margin-top: 1rem;
+  width: 17rem;
+  height: 13rem;
+  font-size: 10rem;
+  text-align: center;
+  padding: auto;
+  background: transparent;
+  border: transparent;
+  color: #e27ba9;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.fa-arrow-down {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.down-arrow:hover .fa-arrow-down {
+  color: #fffd82;
+  background-color: #ffa3af;
+}
+.fa-arrow-down {
+  transition: background-color 0.3s ease;
+}
+
+.hangman-word {
+  /* border: 1px solid pink; */
+  height: 20vh;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.hangman-letter {
+  /* border: 1px solid green; */
+  font-size: 3rem;
+  font-weight: 900;
+  width: 10%;
+  height: 30%;
+  color: #fffd82;
+  border-bottom: 1px solid black;
+}
+
+.letters-guessed,
+.letters-choose {
+  /* border: 1px solid green; */
+  flex-grow: 2;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.letter-button {
+  color: #e27ba9;
+  font-size: 1.3rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: rgb(255, 230, 185);
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+}
+
+.letter-button:hover {
+  transition: 0.3s ease;
+  color: rgb(243, 243, 178);
+  background: #ffa6a6;
+}
+
+.correct {
+  color: #1b998b;
+}
+
+.incorrect {
+  color: rgb(255, 66, 66);
+}

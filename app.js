@@ -1,9 +1,8 @@
-downArrow = document.querySelector(".down-arrow");
-hangmanWordDiv = document.querySelector(".hangman-word");
-lettersGuessedDiv = document.querySelector(".letters-guessed");
-lettersToChooseDiv = document.querySelector(".letters-choose");
+const downArrow = document.querySelector(".down-arrow");
+const hangmanWordDiv = document.querySelector(".hangman-word");
+const lettersGuessedDiv = document.querySelector(".letters-guessed");
+const lettersToChooseDiv = document.querySelector(".letters-choose");
 
-const randomWords = ["awesome", "coding", "horimiya"];
 const alphabet = [
   "a",
   "b",
@@ -35,6 +34,7 @@ const alphabet = [
 const lettersGuessed = [];
 
 setInterval(() => changeArrowColour(), 1000);
+
 // Event handlers
 document.addEventListener("DOMContentLoaded", generateWord);
 document.addEventListener("DOMContentLoaded", generateLetters);
@@ -55,17 +55,17 @@ function getWord() {
 
 async function generateWord() {
   // get random word
-  word = await fetch("https://random-words-api.vercel.app/word")
+  let word = await fetch("https://random-words-api.vercel.app/word")
     .then((res) => res.json())
     .then((data) => data[0].word);
   word = word.toLowerCase();
-  console.log(word);
+  // console.log(word);
 
   // split word into each letter and create span for each letter
-  letters = word.split("");
+  let letters = word.split("");
   //   console.log(letters);
   letters.forEach((letter) => {
-    letterSpan = document.createElement("span");
+    let letterSpan = document.createElement("span");
     letterSpan.classList.add("hangman-letter");
     letterSpan.innerText = letter;
     hangmanWordDiv.appendChild(letterSpan);
@@ -74,9 +74,8 @@ async function generateWord() {
 
 function generateLetters() {
   alphabet.forEach((letter) => {
-    letterButton = document.createElement("button");
+    let letterButton = document.createElement("button");
     letterButton.classList.add("letter-button");
-    // lettersButton.style.background = "#fffd82";
     letterButton.innerText = letter;
     lettersToChooseDiv.appendChild(letterButton);
     letterButton.addEventListener("click", checkLetter);
@@ -85,16 +84,14 @@ function generateLetters() {
 
 // Check to see if the letter is in the word
 function checkLetter(e) {
-  //   console.log(e.target);
-  letterButton = e.target;
+  let letterButton = e.target;
   alphabet.forEach((letter, index) => {
     if (letter === e.target.innerText) {
       lettersGuessedDiv.appendChild(letterButton);
     }
   });
 
-  //   console.log(hangmanWordDiv);
-  hangmanLetters = hangmanWordDiv.childNodes;
+  const hangmanLetters = hangmanWordDiv.childNodes;
   //   console.log("hangmanletters " + hangmanLetters);
   hangmanLetters.forEach((letterSpan) => {
     // console.log(letterButton.innerText);
